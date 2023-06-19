@@ -39,10 +39,12 @@ const app = createApp({
   },
   methods: {
     goNext() {
-      this.currentIndex++;
+      if (this.currentIndex === this.images.length - 1) this.currentIndex = 0;
+      else this.currentIndex++;
     },
     goBack() {
-      this.currentIndex++;
+      if (this.currentIndex === 0) this.currentIndex = this.images.length - 1;
+      else this.currentIndex--;
     },
   },
 });
