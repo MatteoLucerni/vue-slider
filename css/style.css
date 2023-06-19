@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    background-color: black;
+}
+
+img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-size: 5rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* carousel */
+
+#carousel{
+    font-size: 5rem;
+    height: 500px;
+    width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #28293f;
+    user-select: none;
+    overflow: hidden;
+}
+
+#carousel .gallery{
+    height: 100%;
+
+}
+
+#carousel i.fa-solid{
+    position: absolute;
+    color: rgb(112, 112, 112);
+    border: 5px solid black;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: border .4s;
+}
+
+#carousel i.fa-solid:hover{
+    border: 5px solid white;
+}
+
+#carousel .fa-circle-arrow-left{
+    top: 50%;
+    left: 15px;
+}
+
+#carousel .fa-circle-arrow-right{
+    top: 50%;
+    right: 15px;
+}
+
+#preview{
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    display: flex;
+    background-color: black;
+}
+
+#preview .preview-cont{
+    overflow: hidden;
+    height: 100px;
+    width: calc(100% / 5);
+    z-index: 1;
+}
+
+#preview .preview-cont img{
+    width: 100%;
+    position: relative;
+    opacity: 0.6;
+}
+
+/* utils */
+
+.debug{
+    border: 2px dashed black;
+}
+
+.container{
+    margin: 0 auto;
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.active{
+    display: block!important;
+}
+
+.border-green{
+    border: 5px solid green;
+}
+
+.full-opacity{
+    opacity: 1!important;
+}
+
+.iphone-bg{
+    position: fixed;
+    transform: rotate(-90deg);
+    height: 1142px;
+}
+
+.animated-left{
+    animation: slideleft linear 0.1s;
+}
+
+.animated-right{
+    animation: slideright linear 0.1s;
+}
+
+@keyframes slideleft {
+    0%{
+        transform: translateX(20%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideright {
+    0%{
+        transform: translateX(-20%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
