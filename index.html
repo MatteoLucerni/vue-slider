@@ -12,14 +12,19 @@
 <body>
     <div id="root" class="container">
         <h1>DINAMIC CAROUSEL</h1>
-        <div id="carousel">
+        <div id="carousel" @mouseenter="stopInterval" @mouseleave="startInterval">
             <img class="iphone-bg" src="img/iphone.png" alt="iphone">
             <div id="preview">
-                    
+                <div v-for="(pic, i) in images" class="preview-cont">
+                    <img :src="pic.image" :class="{'currentImage':currentIndex === i}" @click="currentIndex = i" :alt="pic.title">
+                </div>
             </div>
             <i id="previous" @click="goBack" class="fa-solid fa-circle-arrow-left"></i>
             <div id="imgPlacer" class="gallery">
-                <img v-for="(pic, i) in images" v-show="currentIndex === i" :src="pic.image" :alt="pic.title">
+                <div class="img-box" v-for="(pic, i) in images" v-show="currentIndex === i">
+                    <img :src="pic.image" :alt="pic.title">
+                    <p class="image-text">{{pic.title}}<br><br>{{pic.text}}</p>
+                </div>
             </div>
             <i id="next" @click="goNext" class="fa-solid fa-circle-arrow-right"></i>
         </div>

@@ -35,6 +35,7 @@ const app = createApp({
         },
       ],
       currentIndex: 0,
+      interval: null,
     };
   },
   methods: {
@@ -46,6 +47,15 @@ const app = createApp({
       if (this.currentIndex === 0) this.currentIndex = this.images.length - 1;
       else this.currentIndex--;
     },
+    stopInterval() {
+      clearInterval(this.interval);
+    },
+    startInterval() {
+      this.interval = setInterval(() => this.goNext(), 1000);
+    },
+  },
+  mounted() {
+    this.startInterval();
   },
 });
 

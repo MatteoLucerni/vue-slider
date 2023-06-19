@@ -64,6 +64,10 @@ h1{
     right: 15px;
 }
 
+#carousel .img-box{
+    height: 100%;
+}
+
 #preview{
     position: fixed;
     top: 50px;
@@ -75,16 +79,17 @@ h1{
 }
 
 #preview .preview-cont{
-    overflow: hidden;
+    
     height: 100px;
     width: calc(100% / 5);
     z-index: 1;
+    margin: 0 10px;
 }
 
 #preview .preview-cont img{
     width: 100%;
     position: relative;
-    opacity: 0.6;
+    filter: grayscale(1);
 }
 
 /* utils */
@@ -103,8 +108,25 @@ h1{
     flex-direction: column;
 }
 
+.image-text{
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .active{
     display: block!important;
+}
+
+.currentImage{
+    filter: grayscale(0)!important;
+    box-shadow: 1px 1px 5px 5px rgb(30, 238, 238);
 }
 
 .border-green{
